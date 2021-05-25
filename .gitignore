@@ -7,3 +7,7 @@
 /.vs/VSWorkspaceState.json
 /bin/Debug/net472
 /obj
+/Installer/AppPackages
+/Installer/bin/x64/Debug
+/Installer/BundleArtifacts
+/Installer/obj
