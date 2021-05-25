@@ -16,7 +16,13 @@
   <ItemGroup>
     <Reference Include="NDILibDotNet2">
       <HintPath>NDILibDotNet2.dll</HintPath>
+      <Private>true</Private>
     </Reference>
     <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Processing.NDI.Lib.x64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

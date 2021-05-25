@@ -10,7 +10,7 @@
   <Identity
     Name="549f93cd-fe5a-4124-a2d4-680d1199ea09"
     Publisher="CN=chris"
-    Version="1.0.0.0" />
+    Version="1.0.1.0" />
 
   <Properties>
     <DisplayName>Commandline NdiPlayer Installer</DisplayName>
