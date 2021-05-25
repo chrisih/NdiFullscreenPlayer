@@ -1,4 +1,5 @@
-﻿using NewTek;
+﻿#region using directives
+using NewTek;
 using NewTek.NDI;
 using SharpDX;
 using SharpDX.Direct2D1;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
+#endregion
 
 namespace dxnditest
 {
