@@ -40,5 +40,5 @@ jobs:
       with:
         name: dist-without-pdb
         path: |
-          dist
-          !dist/**/*.pdb
+          bin\Debug\net472
+          !bin\Debug\net472\**\*.pdb
