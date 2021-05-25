@@ -34,3 +34,6 @@ jobs:
     # Build the Application
     - name: Build Application
       run: msbuild $env:Solution_Name
+      
+      
+      
