@@ -59,7 +59,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: Installer\AppPackages\**\*.msixbundle
-        asset_name: NdiFullscreenPlayer.msixbundle
-        asset_content_type: application/zip
-        
+        asset_path: Installer\bin\**\*.msix       
