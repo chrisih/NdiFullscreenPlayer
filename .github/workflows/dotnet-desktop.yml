@@ -35,15 +35,21 @@ jobs:
     - name: Build Application
       run: msbuild $env:Solution_Name /p:Platform=x64 /p:Configuration=Release /p:UapAppxPackageBuildMode=SideloadOnly /p:AppxBundle=Always
 
-    - name: Create release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+    - name: 'Get Previous tag'
+      id: previoustag
+      uses: "WyriHaximus/github-action-get-previous-tag@v1"
+
+    - name: Create a csproj-based Release
+      # You may pin to the exact commit or the version.
+      # uses: lukacat10/create-release@8e1e5fb65de580de9ff9a08a41a67a097990f694
+      uses: lukacat10/create-release@csprojv4
       with:
-        release_name: Release ${{ GITHUB.RUN.NUMBER }}
-        draft: false
-        prerelease: false
+        # The name of the tag. This should come from the webhook payload, `github.GITHUB_REF` when a user pushes a new tag
+        tag_name: ${{tag}}
+        # The name of the release. For example, `Release v1.0.1`
+        release_name: Latest
+        # Path to the file containing the release version
+        csproj_path: NdiPlayer.csproj
 
     - name: Update release asset
       id: upload-release-asset
