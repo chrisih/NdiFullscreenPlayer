@@ -44,4 +44,5 @@ jobs:
       with:
         artifact: Installer\bin\**\*.msix
         name: ${{steps.previoustag.outputs.tag}}
+        tag: ${{steps.previoustag.outputs.tag}}
         token: ${{ secrets.GITHUB_TOKEN }}
