@@ -39,23 +39,9 @@ jobs:
       id: previoustag
       uses: "WyriHaximus/github-action-get-previous-tag@v1"
 
-    - name: Create a csproj-based Release
-      # You may pin to the exact commit or the version.
-      # uses: lukacat10/create-release@8e1e5fb65de580de9ff9a08a41a67a097990f694
-      uses: lukacat10/create-release@csprojv4
+    - name: Create Release
+      uses: ncipollo/release-action@v1.8.6
       with:
-        # The name of the tag. This should come from the webhook payload, `github.GITHUB_REF` when a user pushes a new tag
-        tag_name: ${{steps.previoustag.outputs.tag}}
-        # The name of the release. For example, `Release v1.0.1`
-        release_name: Latest
-        # Path to the file containing the release version
-        csproj_path: NdiPlayer.csproj
-
-    - name: Update release asset
-      id: upload-release-asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: Installer\bin\**\*.msix       
+        artifact: Installer\bin\**\*.msix
+        name: ${{steps.previoustag.outputs.tag}}
+        token: ${{ secrets.GITHUB_TOKEN }}
