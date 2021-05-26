@@ -26,8 +26,8 @@ jobs:
       with:
         fetch-depth: 0
         
-    - name: Get tag
-      uses: dawidd6/action-get-tag@v1.0.0
+    - name: tag-version
+      uses: juliansangillo/tag-version@v1.5
       
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
